@@ -1,0 +1,137 @@
+Notes by Andrew Cooper
+
+Chapter 1
+----------
+
+1.1 Getting Started
+-------------------
+
+In Unix create a program by creating a file ending in ".c" such as "hello.c" 
+Compile the program with the command cc hello.c
+This will create and make an executable called "a.out"
+
+C programs contain functions and variables
+Functions contain statements that specify operations to be performed
+Variables store values 
+C functions are procedures 
+C programs begin execution at the "main" function
+Other functions are defined by the programmer or included in libraries
+
+Main function calls other functions created by the programmer or from libraries
+
+#include <stdio.h> is an example of code that includes a pre-created library
+
+One way to transfer data betwen functions is for calling function to provide a list of values or "arguments" to the function it calls
+Parentheses after a function name contain argument list. ex: main(), foo(int x, double y)
+
+Statements inside a function are enclosed in braces {}
+A function is called by naming it, followed by the list of args in parens
+ex: printf("hello, world\n"); the text is the string argument to the printf function which prints out to the console
+"hello world" is an example of a "character string" or "string constant"
+"\n" is a notation for newline in C. printf() never adds a new line by itself
+
+Escape sequences: \t tab, \b backspace, \" for quote, \\ for slash
+
+*Exercise 1-1 & 1-2 in repo
+
+1.2 Variables and Arithmetic Expressions
+----------------------------------------
+
+Celsius to Farenheit conversion Celsius = (5/9) * (Fahrenheit - 32)
+In C: Celsius = 5 * (Fahrenheit - 32) / 9;
+The reason for this: integer division truncates meaning any fractional part is discarded. 
+So, 5/9 would be truncated to 0 and all the Celsius temps would then be 0
+Using floating point would eliminate this issue
+
+// or /* */ for comments
+
+In C all variables must be declared before use ex: int number;
+declaration includes type and a variable name
+
+assignment to initialize vars ex: number = 0;
+
+printf examples: 
+printf("%d\t%d\n", number, number2); 
+breakdown: print int, tab, print int, newline
+printf("%3d %6d\n", number, number2);
+breakdown: print int after 3 spaces wide, space, print int after 6 spaces wide, new line
+
+%6d print as decimal integer, at least 6 characters wide
+%.2f print floating point, 2 chars after decimal point
+%6.2f print floating point, at least 6 wide and 2 after decimal
+
+other printf's: %o = octal, %x = hex, %c = char, %s = string, %% = %
+
+1.3 The For Statement
+---------------------
+
+Another variety of loop
+
+for(i = 0; i < someNum; i++)
+i = 0 is initialization
+i < someNum is test condition
+i++ is increment step
+
+1.4 Symbolic Constants
+----------------------
+
+Don't use constants in code if you can avoid it (for example "300")
+Utilize "#define name replacement text" 
+Every time you use "name" it will be replaced with the replacement text.
+*Note* these are called Macros and are used by the pre processor.
+*Note* it is also common practice for the "replacement text" to be in all caps "REPLACEMENT TEXT"
+
+1.5 Character Input and Output
+------------------------------
+
+Text stream: sequence of characters divided into lines, each line consists of zero or more characters followed by \n
+
+"getchar" reads the next input character
+c = getchar();
+
+"putchar" prints a character each time it is called. 
+putchar(c);
+It prints the content of the integer variable c, usually on the screen. 
+Calls to putchar and printf may be interleaved and the output will appear in the order in which the calls are made
+
+1.5.1 File Copying
+------------------
+
+EOF is an an integer located in stdio.h 
+It's numeric value doesn't matter as long as it is not any char value
+
+
+1.5.2 Character Counting
+------------------------
+
+long integers are at least 32 bits
+%ld specifies printf that the argument is a long integer
+%f is used for both float and double
+
+1.5.3 Line Counting
+-------------------
+
+Counting lines is just counting newline characters \n
+Same for other escape chars
+
+1.5.4 Word Counting
+-------------------
+
+if, else statement means do the else statement in the case of the if statement not being true
+
+1.6 Arrays
+----------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
