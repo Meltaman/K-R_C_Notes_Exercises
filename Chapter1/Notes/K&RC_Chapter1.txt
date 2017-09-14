@@ -122,6 +122,37 @@ if, else statement means do the else statement in the case of the if statement n
 1.6 Arrays
 ----------
 
+Array locations start counting from 0
+
+1.7 Functions
+-------------
+
+form of function:
+return-type function-name(parameter declarations (arguments sent to the function)){
+	declarations
+	statements
+}
+
+1.8 Arguments - Call by Value
+-----------------------------
+
+In C all function args are passed by value meaning the function is given values of args in temp vars instead of the originals
+This means if the value is changed after it is passed the original variable value remains the same
+
+If the original variable needs to be changed the function must be passed the address of the variable, this is done with pointers
+
+For arrays when the name of an array is used as an arg the value that is passed is the location of the beginning of the array.
+Array elements are not copied. This means the function can access and change any element of the array.
+
+1.9 Character Arrays
+--------------------
+
+%s is string or character array
+
+
+
+
+
 
 
 
